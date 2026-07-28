@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tajlandia, lipiec 2027 — materiał wstępny</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0F2E3D;
+  --ink-soft:#3A5C69;
+  --paper:#EDF1F0;
+  --card:#FFFFFF;
+  --depth:#1B5B6E;
+  --shoal:#A8C6C2;
+  --shoal-pale:#DCE8E5;
+  --signal:#B5296D;
+  --sand:#E8DCC0;
+  --rule:rgba(15,46,61,0.16);
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Newsreader",Georgia,serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:18px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+
+/* ---------- hero ---------- */
+.hero{background:var(--ink);color:var(--paper);padding:64px 0 0;position:relative;overflow:hidden}
+.hero .wrap{position:relative;z-index:2}
+.eyebrow{
+  font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--signal);margin:0 0 18px;
+}
+.hero .eyebrow{color:#F09CC4}
+h1{
+  font-family:var(--display);font-weight:800;font-size:clamp(38px,7vw,74px);
+  line-height:1.02;letter-spacing:-.02em;margin:0 0 20px;max-width:15ch;
+}
+.hero .lede{font-size:20px;max-width:56ch;color:#C6D6D9;margin:0 0 44px}
+.facts{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:1px;background:rgba(168,198,194,.25);border-top:1px solid rgba(168,198,194,.25);
+}
+.fact{background:var(--ink);padding:20px 18px 26px}
+.fact dt{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--shoal);margin:0 0 8px}
+.fact dd{margin:0;font-family:var(--display);font-weight:600;font-size:23px;line-height:1.2}
+.fact dd small{display:block;font-family:var(--body);font-weight:400;font-size:14px;color:#9FB8BC;margin-top:5px}
+
+/* ---------- sounding strip (signature) ---------- */
+.sounding{margin:0;padding:0;background:var(--ink);line-height:0}
+.sounding svg{width:100%;height:96px;display:block}
+
+/* ---------- sections ---------- */
+section{padding:62px 0}
+section+section{border-top:1px solid var(--rule)}
+h2{
+  font-family:var(--display);font-weight:600;font-size:clamp(27px,3.6vw,38px);
+  line-height:1.12;letter-spacing:-.015em;margin:0 0 22px;max-width:22ch;
+}
+h3{font-family:var(--display);font-weight:600;font-size:21px;margin:0 0 8px;letter-spacing:-.01em}
+p{margin:0 0 18px;max-width:68ch}
+.lede-2{font-size:20px;color:var(--ink-soft);max-width:60ch}
+a{color:var(--depth);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--signal)}
+strong{font-weight:500}
+
+/* ---------- note / caution ---------- */
+.note{
+  border-left:3px solid var(--signal);background:var(--card);
+  padding:18px 22px;margin:26px 0;max-width:70ch;
+}
+.note p:last-child{margin-bottom:0}
+.note .tag{
+  font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--signal);display:block;margin-bottom:7px;
+}
+
+/* ---------- flights ---------- */
+.routes{display:grid;gap:16px;margin-top:30px}
+.route{
+  background:var(--card);border:1px solid var(--rule);border-radius:3px;
+  padding:24px 26px;display:grid;grid-template-columns:auto 1fr;gap:0 26px;align-items:start;
+}
+.route .num{
+  font-family:var(--mono);font-size:12px;color:var(--signal);
+  border:1px solid var(--signal);border-radius:50%;
+  width:30px;height:30px;display:grid;place-items:center;grid-row:span 3;
+}
+.route .path{font-family:var(--display);font-weight:600;font-size:19px;margin:0 0 6px;line-height:1.35}
+.route .path em{font-style:normal;color:var(--shoal);padding:0 4px}
+.route p{margin:0 0 10px;font-size:16.5px;color:var(--ink-soft)}
+.route .meta{
+  font-family:var(--mono);font-size:12.5px;color:var(--depth);
+  display:flex;flex-wrap:wrap;gap:6px 20px;margin:0;
+}
+
+/* ---------- itinerary strip ---------- */
+.legs{display:grid;grid-template-columns:1fr auto 1fr;gap:0;margin:34px 0 10px;align-items:stretch}
+.leg{background:var(--card);border:1px solid var(--rule);padding:22px 24px}
+.leg.mid{background:var(--shoal-pale);border-left:0;border-right:0;display:grid;place-items:center;text-align:center;padding:22px 20px}
+.leg .n{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--signal);margin:0 0 9px}
+.leg h4{font-family:var(--display);font-weight:600;font-size:22px;margin:0 0 5px}
+.leg .nights{font-family:var(--mono);font-size:13px;color:var(--depth);margin:0 0 10px}
+.leg p{font-size:16px;margin:0;color:var(--ink-soft)}
+
+/* ---------- photos ---------- */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:28px 0 10px}
+figure{margin:0}
+figure img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:3px;background:var(--shoal-pale)}
+figcaption{font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:7px;line-height:1.5}
+
+/* ---------- hotels ---------- */
+.hotels{display:grid;gap:18px;margin-top:26px}
+.hotel{background:var(--card);border:1px solid var(--rule);border-radius:3px;overflow:hidden;display:grid;grid-template-columns:280px 1fr}
+.hotel img{width:100%;height:100%;min-height:220px;object-fit:cover;display:block;background:var(--shoal-pale)}
+.hotel .body{padding:24px 26px}
+.hotel .top{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-bottom:10px}
+.hotel h3{margin:0}
+.score{font-family:var(--mono);font-size:12.5px;color:var(--depth);white-space:nowrap}
+.price{
+  font-family:var(--mono);font-size:12.5px;background:var(--sand);color:#5C4A1E;
+  padding:3px 9px;border-radius:2px;white-space:nowrap;
+}
+.hotel p{font-size:16.5px;margin:0 0 12px;max-width:none}
+.hotel .plus,.hotel .minus{display:block;font-size:16px;margin:0 0 6px;padding-left:20px;position:relative;color:var(--ink-soft)}
+.hotel .plus:before{content:"+";position:absolute;left:0;color:var(--depth);font-family:var(--mono)}
+.hotel .minus:before{content:"−";position:absolute;left:0;color:var(--signal);font-family:var(--mono)}
+.links{margin-top:15px;display:flex;flex-wrap:wrap;gap:8px 18px;font-family:var(--mono);font-size:12.5px}
+
+/* ---------- practical grid ---------- */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;margin-top:26px}
+.grid2 h3{margin-bottom:6px}
+.grid2 p{font-size:16.5px}
+
+/* ---------- todo ---------- */
+ol.todo{list-style:none;counter-reset:t;padding:0;margin:26px 0 0;max-width:72ch}
+ol.todo li{counter-increment:t;position:relative;padding:0 0 20px 46px;border-bottom:1px solid var(--rule);margin-bottom:20px}
+ol.todo li:last-child{border-bottom:0}
+ol.todo li:before{
+  content:counter(t,decimal-leading-zero);position:absolute;left:0;top:2px;
+  font-family:var(--mono);font-size:13px;color:var(--signal);
+}
+ol.todo strong{font-family:var(--display);font-weight:600;font-size:18px;display:block;margin-bottom:3px}
+ol.todo span{font-size:16.5px;color:var(--ink-soft)}
+
+footer{background:var(--ink);color:#9FB8BC;padding:44px 0 54px;font-size:14px}
+footer p{max-width:74ch;margin:0 0 12px}
+footer a{color:var(--shoal)}
+
+@media(max-width:760px){
+  body{font-size:17px}
+  .legs{grid-template-columns:1fr}
+  .leg.mid{border-left:1px solid var(--rule);border-right:1px solid var(--rule);border-top:0;border-bottom:0}
+  .hotel{grid-template-columns:1fr}
+  .hotel img{min-height:200px;aspect-ratio:16/9}
+  .route{grid-template-columns:1fr}
+  .route .num{grid-row:auto;margin-bottom:14px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Materiał wstępny · sporządzony 28 lipca 2026</p>
+    <h1>Zatoka Tajlandzka, lipiec 2027</h1>
+    <p class="lede">Dwadzieścia cztery noce dla dwóch osób: tydzień pracy zdalnej na Samui, potem ponad dwa tygodnie na Koh Phangan. Dokument zbiera to, co ustaliliśmy, żeby było od czego zacząć zawężanie.</p>
+    <dl class="facts">
+      <div class="fact"><dt>Termin</dt><dd>2–5 VII<small>powrót 26–29 VII</small></dd></div>
+      <div class="fact"><dt>Długość</dt><dd>24 noce<small>8 + 16</small></dd></div>
+      <div class="fact"><dt>Nocleg</dt><dd>~120 €<small>średnia za dobę</small></dd></div>
+      <div class="fact"><dt>Transport</dt><dd>+200 €<small>na osobę, na komfort</small></dd></div>
+      <div class="fact"><dt>Auto</dt><dd>Nie<small>songthaew i Grab</small></dd></div>
+    </dl>
+  </div>
+  <div class="sounding" aria-hidden="true">
+    <svg viewBox="0 0 1080 96" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,58 C90,40 150,74 240,62 C330,50 380,30 470,44 C560,58 610,78 700,66 C790,54 850,34 940,48 C1010,59 1050,70 1080,64 L1080,96 L0,96 Z" fill="#1B5B6E" opacity="0.55"/>
+      <path d="M0,74 C110,62 170,88 270,80 C380,71 430,56 530,66 C640,77 690,90 790,84 C880,79 950,64 1080,76 L1080,96 L0,96 Z" fill="#A8C6C2" opacity="0.3"/>
+    </svg>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section>
+  <p class="eyebrow">Założenie wyjściowe</p>
+  <h2>Lipiec przesądza o wyborze strony kraju</h2>
+  <p class="lede-2">To jedyna decyzja w tym planie, która nie jest kwestią gustu ani budżetu. Reszta jest do negocjacji.</p>
+  <p>W lipcu monsun południowo-zachodni uderza w wybrzeże andamańskie. Phuket, Krabi, Koh Lanta, Koh Lipe i Similany odpadają — ciężki deszcz, wzburzone morze, odwoływane rejsy. Odpada też wschodnia zatoka: Koh Kood i Koh Chang mają w lipcu około 350 mm opadu i ponad dwadzieścia dni deszczowych, a część resortów jest wtedy zamknięta.</p>
+  <p>Zostaje archipelag Samui, który ma odwrotny cykl — jego pora deszczowa przypada na październik–grudzień. W lipcu typowy dzień to słoneczny poranek i popołudniowa przelotna ulewa, rzadziej całodzienny deszcz. Statystycznie Samui jest w lipcu suchsze niż Bangkok i Chiang Mai, czyli niż miejsca, w których byliśmy w 2026 roku.</p>
+  <div class="note">
+    <span class="tag">Uczciwe zastrzeżenie</span>
+    <p>Sierpień jest pod względem pogody praktycznie identyczny, miejscami odrobinę suchszy. Przewaga początku lipca to <strong>cena, nie pogoda</strong> — druga połowa lipca i sierpień to szczyt wakacji szkolnych w Europie Zachodniej, co podnosi zarówno loty, jak i hotele. Realna granica przesuwa się dopiero we wrześniu, który jest najmokrzejszym miesiącem niemal w całej Tajlandii.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">Etap 01 · dolot</p>
+  <h2>Najbardziej prawdopodobne warianty lotu</h2>
+  <p>Na Samui nie dolecicie bezpośrednio z Europy. Lotnisko USM obsługują wyłącznie Bangkok Airways i Scoot, z dziewięciu portów. Poniższe trzy warianty wyczerpują sensowne możliwości. Ceny są rzędem wielkości z lata 2026 — dla lipca 2027 traktujcie je jako orientację, nie ofertę.</p>
+
+  <div class="routes">
+    <div class="route">
+      <div class="num">1</div>
+      <p class="path">LUX / BRU / FRA <em>→</em> Bangkok <em>→</em> USM</p>
+      <p>Wariant domyślny. Długi rejs liniami zatokowymi lub Thai, potem godzina i kwadrans Bangkok Airways. Najprostszy, najdroższy na ostatnim odcinku — Bangkok Airways ma na tej trasie monopol.</p>
+      <p class="meta"><span>ok. 850–1100 € / os.</span><span>+ ok. 150–200 € odcinek USM</span><span>19–23 h drzwi w drzwi</span></p>
+    </div>
+    <div class="route">
+      <div class="num">2</div>
+      <p class="path">Europa <em>→</em> Singapur <em>→</em> USM</p>
+      <p>Omija Bangkok. Scoot i Bangkok Airways latają z Singapuru wprost na Samui. Bywa korzystniejszy cenowo, jeśli trafi się dobra taryfa Singapore Airlines lub Qatar, i daje krótszą przesiadkę niż wariant przez BKK.</p>
+      <p class="meta"><span>ok. 900–1200 € / os. łącznie</span><span>2 h odcinek wyspowy</span><span>do sprawdzenia równolegle</span></p>
+    </div>
+    <div class="route">
+      <div class="num">3</div>
+      <p class="path">Europa <em>→</em> Bangkok <em>→</em> Surat Thani <em>→</em> prom</p>
+      <p>Wariant oszczędnościowy. Tanie linie do Surat Thani, potem katamaran. Około 100 € taniej na osobę, ale dokłada cztery godziny w dniu przylotu — po locie z Europy odczuwalne.</p>
+      <p class="meta"><span>−100 € / os.</span><span>+4 h podróży</span><span>przy Waszym priorytecie: raczej nie</span></p>
+    </div>
+  </div>
+
+  <div class="note">
+    <span class="tag">Pilne</span>
+    <p>Linie otwierają sprzedaż na lipiec 2027 mniej więcej <strong>teraz</strong> — rozkłady wchodzą zazwyczaj 330–360 dni przed odlotem. Warto ustawić alerty cenowe w najbliższych tygodniach.</p>
+    <p>Sugerowany podział budżetu na komfort: wylot z Luksemburga lub Brukseli zamiast Frankfurtu (największy realny zysk — brak wyjazdu o czwartej rano), lot wprost na USM zamiast Surat Thani, i prywatne auto z portu Thong Sala zamiast dzielonej songthaewy.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">Etap 02 · trasa</p>
+  <h2>Dwie bazy zamiast jednej</h2>
+  <p>Najlepsza plaża i najlepsza baza na cztery tygodnie to nie to samo miejsce. Podział rozwiązuje ten konflikt: infrastruktura tam, gdzie potrzebna jest do pracy, plaża tam, gdzie zaczyna się wolne. Dodatkowo, jeśli tydzień pracy trafi na gorszą pogodę, nic nie tracicie — i tak siedzicie przy laptopie.</p>
+
+  <div class="legs">
+    <div class="leg">
+      <p class="n">Faza pierwsza</p>
+      <h4>Mae Nam, Koh Samui</h4>
+      <p class="nights">8 nocy · praca zdalna</p>
+      <p>Światłowód, apteki, siłownie, Grab, prawdziwa wioska z targiem. Plaża północna, czyli osłonięta od lipcowego wiatru.</p>
+    </div>
+    <div class="leg mid">
+      <p class="n">Przeprawa</p>
+      <p style="font-family:var(--mono);font-size:13px;color:var(--depth);line-height:1.7">katamaran<br>20–30 min<br>+ auto 45 min</p>
+    </div>
+    <div class="leg">
+      <p class="n">Faza druga</p>
+      <h4>Thong Nai Pan, Phangan</h4>
+      <p class="nights">16 nocy · wypoczynek</p>
+      <p>Najlepszy piasek w okolicy, szybki spadek dna, dwie zatoki połączone spacerem. Zero życia nocnego.</p>
+    </div>
+  </div>
+
+  <div class="note">
+    <span class="tag">Detal logistyczny</span>
+    <p>Katamaran Lomprayah odpływa z <strong>Maenam Pier</strong> — czyli z molo przy samej zatoce, w której mieszkacie w fazie pierwszej. To eliminuje przejazd przez pół wyspy z bagażami i jest głównym argumentem za Mae Nam względem Choeng Mon czy Bophut.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">Faza pierwsza</p>
+  <h2>Mae Nam — co jest w zasięgu spaceru</h2>
+  <p>Zatoka ciągnie się około siedmiu kilometrów, a wzdłuż niej rozłożone są bary i restauracje. W czwartki działa Walking Street — targ nocny z jedzeniem, mniej więcej od siedemnastej do dwudziestej drugiej. Jest też poranny targ, apteka, masaże i minimarkety. To najbardziej „zwyczajna" część Samui i dokładnie dlatego działa na tydzień pracy.</p>
+  <p>Piasek jest miejscami gruboziarnisty i to nie jest biały puder — za to woda jest płytka i spokojna, a naprzeciwko widać Koh Phangan.</p>
+
+  <div class="gallery">
+    <figure>
+      <img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AG9NLjAqHDNUCHp8hSu3oUxbNxfGPyI5IIO3sNQ-R0Qpd8ySmg0PYjDDEyoprOC11edyHpbfgWeVVKd2bGHJDHfFVpPXYm_QPGNo_qwJRg17iYrgwouBzibUwTTwBCSeniIRUrtXTpmXJVXOdRYYZyAouSha=s4800-w800-h600" alt="Plaża Maenam na Koh Samui">
+      <figcaption>Maenam Beach · fot. Antonio De Marinis</figcaption>
+    </figure>
+    <figure>
+      <img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AG9NLjDZZcU15qUidk0Ic-LuIguKfSikkdn72c9JajCmqdgzOlrw_6NVG_jJtDdy-WZbVS-KBIxRAJ-8JSN_K_QYOgJLrMH2PYTGxFhp4ydf96zWdCzBPohBbP9363VrUyDT40SIfnm_445IViXN0Neqxh9Khw=s4800-w800-h600" alt="Spokojna woda i palmy na plaży Maenam">
+      <figcaption>Maenam Beach · fot. Kaan Atakan</figcaption>
+    </figure>
+    <figure>
+      <img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AG9NLjBnX0agerSSZhU7PvOAmkOmDoWCP_uKDOBRZzk4zf87yanCD1qAAyo1Rd2jGA3a9PWmUz_kc9EpWof0HjuAc_c7Z5he_R4xTa_-osid2NPtjC_4pPQfGmlj64quE8sQ6wRra-p3hKsd2EDVJg=s4800-w646-h374" alt="Targ nocny Walking Street w Mae Nam">
+      <figcaption>Walking Street, czwartki · fot. Pascal Hommel</figcaption>
+    </figure>
+  </div>
+  <p style="font-family:var(--mono);font-size:12.5px;color:var(--ink-soft)"><a href="https://maps.google.com/?cid=17310012919939283030">Maenam Beach w Google Maps</a> · <a href="https://maps.google.com/?cid=1612178514927006117">Walking Street</a></p>
+
+  <div class="hotels">
+
+    <article class="hotel">
+      <img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AG9NLjCenSv3zRBVHwAFXwvwuAe3RiTFVF_3XlQoJ_N1-dxoRvnwsnTrIbGjGTcGd_kAX6-oDULxbHOiyx7oLf-r6zcLASI9ChVHEWU7oVnjnvAGrYvC0fhVVGEedL_pq03L-sAb_fhWXhj5-lOJ6w=s4800-w800-h600" alt="The Cosy Maenam Beach Resort">
+      <div class="body">
+        <div class="top"><h3>The Cosy Maenam Beach Resort</h3><span class="score">4,5 / 318 opinii</span><span class="price">75–105 €</span></div>
+        <p>Kilkanaście osobnych bungalowów w środku zatoki, przy samej Walking Street. Restauracja z widokiem na morze chwalona osobno, także przez osoby, które tam nie nocują.</p>
+        <span class="plus">Śniadania do wyboru — tajskie, kontynentalne, angielskie</span>
+        <span class="plus">Najlepsza lokalizacja pod jedzenie na piechotę</span>
+        <span class="minus">Basen mały, raczej do ochłody niż do pływania</span>
+        <div class="links"><a href="https://thecosybeachresort.com/">strona hotelu</a><a href="https://maps.google.com/?cid=8053662933656000467">Google Maps</a></div>
+      </div>
+    </article>
+
+    <article class="hotel">
+      <img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AG9NLjAT96BuSrazF4BILJTVq6w2vSc8_yPDuvD_cvbXTtNup880BEzqVnS6iCFUxIm_hJVGTcdmfIWklSnqQgydRb3pdItYH7sR8P6hty0SUOw8jYtjOOPoXg2bFdJjJgIpsA_dkOrAR-u6vI7LT-4ET3IPGA=s4800-w800-h600" alt="Coco Palm Beach Resort w Mae Nam">
+      <div class="body">
+        <div class="top"><h3>Coco Palm Beach Resort</h3><span class="score">4,3 / 980 opinii</span><span class="price">70–95 €</span></div>
+        <p>Bungalowy w ogrodzie na zachodnim krańcu zatoki. Ma jedną cechę, której nie ma nikt inny: leży minutę od molo Lomprayah, a obsługa dowozi gości na przystań meleksem.</p>
+        <span class="plus">Bezkonkurencyjny przy przeprowadzce z bagażami na Phangan</span>
+        <span class="minus">Nowsze opinie mówią o zużytych bungalowach i powtarzalnym śniadaniu</span>
+        <span class="minus">Daleko od Walking Street — nie dojdziecie tam pieszo</span>
+        <div class="links"><a href="http://www.cocopalmbeachresort.com/">strona hotelu</a><a href="https://maps.google.com/?cid=15955570227878149155">Google Maps</a></div>
+      </div>
+    </article>
+
+    <article class="hotel">
+      <img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AG9NLjAdq3rNMjDLRR_y67bqGtnHpyVQsEQ-R07VmAdfM6fyXmOP02J_vvFsHTye67bJlG9l_sqR_MCSPAIx08Bqc4cN5D4JIti2OhZTlkvoeNonDAtg0kQZKtkYtR2WQBzaAgeV3tI9XUf1HM8aVQ=s4800-w800-h600" alt="Santiburi Koh Samui">
+      <div class="body">
+        <div class="top"><h3>Santiburi Koh Samui</h3><span class="score">4,7 / 949 opinii</span><span class="price">150–200 €</span></div>
+        <p>Pięć gwiazdek na najlepszym odcinku plaży, duży ogród, prywatny fragment brzegu. Opcja „na styk" — przy ośmiu nocach to około 1300 € zamiast 700.</p>
+        <span class="plus">Śniadania i restauracja chwalone bardzo konsekwentnie</span>
+        <span class="minus">Wejście w budżet wymaga oszczędności na fazie drugiej</span>
+        <div class="links"><a href="https://santiburisamui.com/">strona hotelu</a><a href="https://maps.google.com/?cid=13015706162977324589">Google Maps</a></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">Faza druga</p>
+  <h2>Thong Nai Pan — plaża, dla której warto się pofatygować</h2>
+  <p>Północno-wschodni róg Koh Phangan. Imprezowe Haad Rin leży na przeciwnym końcu wyspy i tutaj nie dociera. To jedyna plaża w okolicy z naprawdę miękkim piaskiem i porządnym spadkiem dna — wchodzi się do wody i od razu można pływać, zamiast brodzić po koralu.</p>
+  <p>Istotny szczegół przy szesnastu nocach: to <strong>dwie zatoki, nie jedna</strong>. Między Noi a Yai przechodzi się plażą w około dwadzieścia minut, a Yai ma własną wioskę z restauracjami. To praktycznie podwaja wybór jedzenia w zasięgu spaceru.</p>
+
+  <div class="gallery">
+    <figure>
+      <img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AG9NLjDmGS1kLUlwFhdqGUIQiueyZMIMhrT2fvRsr1VVSCEQkIYe5aLjLh2lDFqv8dhxbvZXl_ig6oJFdsbHU6cFk8BS0aEPeB5_NPnuYzvK-kNsijkYh0AIl4iWu51JxbU_OpBDzJmz9SGs-4ZF8A=s4800-w800-h600" alt="Zatoka Thong Nai Pan Noi">
+      <figcaption>Thong Nai Pan Noi · fot. Yuriy Ivanoff</figcaption>
+    </figure>
+    <figure>
+      <img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AG9NLjAa3VyLovbhZcKywpOxBS3BaV-puRAmu7QjgGTlV5UemX7y3EjKwAMOQDRZAbhc3wcsBqBuW4gcCJVewRTbPtMWlcZYs2KaasycpaBUEmJUolnf_h1T4yt0dKS7IH4bmrogszFyltVNl8Vr_A=s4800-w800-h600" alt="Piasek i woda w Thong Nai Pan">
+      <figcaption>Thong Nai Pan Noi · fot. Christian Stangl</figcaption>
+    </figure>
+    <figure>
+      <img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AG9NLjBLuoPiwKixm3sHqza6uzQxkHIJHPxam6SKx5YgqHptnEERkG7xhiYdarfz8a9WC4Raolc3FyHtgeQ9Phb2EosY8yClDe8mucfyfowxyL_9xiiTc1apgKql92wcuqBDk5iqnFDOqJSTgdwsSaNmrlFfKQ=s4800-w800-h600" alt="Sąsiednia zatoka Thong Nai Pan Yai">
+      <figcaption>Thong Nai Pan Yai · fot. Wal Kn</figcaption>
+    </figure>
+  </div>
+  <p style="font-family:var(--mono);font-size:12.5px;color:var(--ink-soft)"><a href="https://maps.google.com/?cid=18131493304911226949">Thong Nai Pan Noi w Google Maps</a> · <a href="https://maps.google.com/?cid=3642296089057413569">Thong Nai Pan Yai</a></p>
+
+  <div class="hotels">
+
+    <article class="hotel">
+      <img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AG9NLjCsxWKd0k8lJn_G3DoUKsfl2x19SpQhtgXj3tIMFQ6JMb91ED0KZ0OFAVyioc1xaeAVRYJowwY6NVUr9U0muZzKp2i2ho1EZyiFJUdvP0YI1Z_d-8G4zvTQYDsTa74V-oFmwrcZ8zmgmeSXUwc=s4800-w800-h600" alt="Buri Rasa Village Phangan">
+      <div class="body">
+        <div class="top"><h3>Buri Rasa Village Phangan</h3><span class="score">4,8 / 1798 opinii</span><span class="price">120–150 €</span></div>
+        <p>Cztery gwiazdki przy samej plaży, brukowany placyk w środku resortu, spa i basen. Od bramy odchodzi uliczka z minimarketami, restauracjami, street foodem i barami.</p>
+        <span class="plus">Najwyższa i najlepiej udokumentowana ocena w zatoce</span>
+        <span class="plus">Organizuje odbiór łodzią wprost z Samui, 30–40 minut</span>
+        <span class="minus">Śniadania niekonsekwentne — część gości je wprost odpuszcza</span>
+        <span class="minus">Siłownia bardzo mała, leżaki blisko siebie</span>
+        <div class="links"><a href="https://www.burirasa.com/phangan/">strona hotelu</a><a href="https://maps.google.com/?cid=8699706950493478847">Google Maps</a></div>
+      </div>
+    </article>
+
+    <article class="hotel">
+      <img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AG9NLjDZkt_TJKEGOOVmr6l5ENBrQCDnSKZHaBwhfvib1TAK0TzYxCmUgWusPd652jOefM8_j7vo6a7BAkE-dhVQBSpX2oAbV2Y3dEgJbFkkk7iWfDH8JrVWpTo6h72z_PW5A_FxPvulEKWEINZn=s4800-w800-h600" alt="Panviman Resort Koh Phangan">
+      <div class="body">
+        <div class="top"><h3>Panviman Resort</h3><span class="score">4,5 / 1660 opinii</span><span class="price">90–130 €</span></div>
+        <p>Na wzgórzu nad zatoką, z widokiem na całą Thong Nai Pan. Po rozległym terenie wozi się gości meleksami, co rozwiązuje problem schodów. Przy resorcie ulica z tanim jedzeniem.</p>
+        <span class="plus">Śniadania chwalone znacznie konsekwentniej niż w Buri Rasa</span>
+        <span class="plus">Spa i siłownia na miejscu, taniej niż konkurencja</span>
+        <span class="minus">Wnętrza wyraźnie starsze, część pokoi ciemnawa</span>
+        <div class="links"><a href="https://www.panvimanresortkohphangan.com/">strona hotelu</a><a href="https://maps.google.com/?cid=10604462604182531539">Google Maps</a></div>
+      </div>
+    </article>
+
+    <article class="hotel">
+      <img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AG9NLjDfY7xcjOgB4NGm_HIV9h9qyxLj-hBXqObQyOaCJ_LUzogXOnxyYQe4mhe82I4HWimS-tIswHVknj5ruPSz-B2jP_FdFhAZPYhw3NyPslTxOmkYGnJBN3clWDraxyf_0YxQHbRFD0Q_sg_-vQ=s4800-w800-h600" alt="Koh Phangan Pavilions">
+      <div class="body">
+        <div class="top"><h3>Koh Phangan Pavilions</h3><span class="score">4,8 / 102 opinie</span><span class="price">70–100 €</span></div>
+        <p>Apartamenty z aneksem kuchennym na wzgórzu, z basenem i widokiem na morze. Goście, którzy nocowali też w Buri Rasa i Santhiya, stawiają to miejsce wyżej za spokój i utrzymanie.</p>
+        <span class="plus">Najtańsza opcja — uwalnia budżet na Santiburi w fazie pierwszej</span>
+        <span class="plus">Kuchnia w apartamencie, przydatna przy szesnastu nocach</span>
+        <span class="minus">Około 200 schodów w dół do wioski i plaży</span>
+        <span class="minus">Brak restauracji i baru na miejscu, czyli brak śniadań</span>
+        <div class="links"><a href="http://www.kohphanganpavilions.com/">strona hotelu</a><a href="https://maps.google.com/?cid=15676221529607814806">Google Maps</a></div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="note">
+    <span class="tag">Rozłożenie budżetu</span>
+    <p>Przy średniej 120 € na 24 noce pula wynosi około 2880 €. Nie musi być dzielona równo: osiem nocy w Mae Nam po 85 € to około 680 €, co zostawia na Phangan blisko 2200 €, czyli około 137 € za noc. Kupujecie lepszy hotel tam, gdzie spędzicie dwie trzecie czasu.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">Etap 03 · sprawy praktyczne</p>
+  <h2>Cztery rzeczy do pilnowania</h2>
+
+  <div class="grid2">
+    <div>
+      <h3>Wiza</h3>
+      <p>Rząd tajski zatwierdził w maju 2026 skrócenie ruchu bezwizowego z sześćdziesięciu do trzydziestu dni dla większości nacji, w tym UE. Przy 24 nocach plus dni podróży mieścicie się, ale bez zapasu. Do zweryfikowania jesienią 2026, gdy sytuacja się wyjaśni. Alternatywa to eVisa Tourist. Obowiązkowa jest też karta przyjazdowa TDAC, składana bezpłatnie do 72 godzin przed przylotem.</p>
+    </div>
+    <div>
+      <h3>Transport bez auta</h3>
+      <p>Grab działa na Samui w całej wyspie. Na Phangan nie działa wcale — tam jeżdżą songthaewy po stałych stawkach za osobę, a standardem jest zapisanie numeru kierowcy w WhatsAppie przy pierwszym kursie. Thong Sala–Thong Nai Pan to około 300–500 THB od osoby dzieloną songthaewą albo 1000–1500 THB za prywatne auto. Recepcja resortu zamawia bez problemu.</p>
+    </div>
+    <div>
+      <h3>Internet do pracy</h3>
+      <p>Mae Nam ma światłowód i to jest główny powód, dla którego tydzień pracy wypada tam, a nie na Phangan. Przed rezerwacją warto poprosić hotel o test prędkości w pokoju. Jako zabezpieczenie: eSIM AIS lub True z pakietem 5G — zasięg dobry zarówno na Samui, jak i w Thong Nai Pan.</p>
+    </div>
+    <div>
+      <h3>Promy i Full Moon</h3>
+      <p>Biletów promowych nie ma sensu kupować z Europy — przy dłuższym pobycie i tak dopasujecie się do pogody, wystarczy dwa–trzy dni wcześniej. Warto natomiast sprawdzić kalendarz Full Moon Party. Sama impreza jest na drugim końcu wyspy, ale w te doby port Thong Sala jest zapchany, a kierowcy podbijają stawki — po prostu nie planujcie na nie przyjazdu ani wyjazdu.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">Co dalej</p>
+  <h2>Otwarte punkty do rozstrzygnięcia</h2>
+  <ol class="todo">
+    <li><strong>Alerty cenowe na loty</strong><span>Najpilniejsze. Sprzedaż na początek lipca 2027 otwiera się w najbliższych tygodniach. Warto śledzić równolegle trasę przez Bangkok i przez Singapur, z wylotem z kilku lotnisk.</span></li>
+    <li><strong>Wybór pary hoteli, nie pojedynczych</strong><span>Decyzje w fazie pierwszej i drugiej są połączone budżetem. Santiburi w Mae Nam wymusza Pavilions w Thong Nai Pan, i odwrotnie.</span></li>
+    <li><strong>Zapytanie o stawkę long-stay</strong><span>Przy szesnastu nocach warto pisać do hotelu bezpośrednio, nie przez portal. W niskim sezonie tajskie resorty schodzą o 20–35% od cen z Booking.com.</span></li>
+    <li><strong>Wycena transferu łodzią z Samui</strong><span>Buri Rasa organizuje odbiór łodzią w 30–40 minut, co omija zarówno port Thong Sala, jak i 45 minut górskiej drogi. Mieści się w budżecie na komfort — wymaga tylko potwierdzenia ceny.</span></li>
+    <li><strong>Weryfikacja śniadań w Buri Rasa</strong><span>Jeśli padnie na ten hotel, warto zarezerwować pierwsze dwie noce bez śniadania, sprawdzić na miejscu i dopiero wtedy dokupić na resztę pobytu.</span></li>
+    <li><strong>Status ruchu bezwizowego</strong><span>Do sprawdzenia jesienią 2026. Jeśli wejdzie limit trzydziestu dni, warto od razu zaplanować eVisa Tourist zamiast liczyć na przedłużenie na miejscu.</span></li>
+  </ol>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong style="color:#C6D6D9">O tym dokumencie.</strong> Zestawienie robocze, sporządzone 28 lipca 2026 na podstawie rozmowy i wyszukiwania. Ceny noclegów to widełki obserwowane w niskim sezonie 2025–2026 i mają charakter orientacyjny — dla lipca 2027 nikt ich dziś nie zna. Oceny i liczby opinii pochodzą z Google Maps i były aktualne w dniu sporządzenia. Dane opadowe to długoletnie średnie, przy których poszczególne źródła różnią się nawet o kilkadziesiąt milimetrów.</p>
+    <p><strong style="color:#C6D6D9">Zdjęcia.</strong> Wszystkie pochodzą z Google Maps, wraz z podpisami autorów, i wczytują się z serwerów Google — dokument wymaga połączenia z siecią. Świadomie nie użyto oficjalnych galerii hotelowych: są robione szerokim kątem i rozjaśniane. Uczciwszy obraz dają zdjęcia gości w Google Maps, z filtrem „najnowsze".</p>
+    <p><strong style="color:#C6D6D9">Jedna rzecz do zapamiętania.</strong> Wszystkie zdjęcia w tym dokumencie są z wysokiego sezonu. W lipcu niebo jest częściej zachmurzone, zieleń bujniejsza, a po nocnym deszczu na plaży leżą naniesione liście — hotele sprzątają rano, ale pierwsze godziny wyglądają mniej pocztówkowo.</p>
+  </div>
+</footer>
+
+</body>
+</html>
